@@ -1,0 +1,28 @@
+server:
+  port: 0
+
+spring:
+  application:
+    name: grades-ms
+
+  datasource:
+    url: jdbc:postgresql://mel.db.elephantsql.com:5432/rjbysvam?socketTimeout=3
+    username: rjbysvam
+    password: 88z44Tl3Y6qjFoIO3XlAlbdXrzF6tlK-
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+    locations: classpath:db/migration
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
